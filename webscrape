@@ -1,0 +1,25 @@
+import requests
+
+"""with requests.Session() as c:
+    url = "http://www.usaswimming.org/DesktopDefault.aspx?TabId=1470&Alias=Rainbow&Lang=en-US"
+    LASTNAME = "Lochte"
+    FIRSTNAME = "Ryan"
+    c.get(url)
+    login_data = dict(lastname=LASTNAME, firstname=FIRSTNAME)
+    c.post(url, data=login_data, headers=("Referer": "http://usaswimming.org")
+    page = c.get("http://www.usaswimming.org/DesktopDefault.aspx?TabId=1470&Alias=Rainbow&Lang=en-US")
+    print(page.content)
+"""    
+
+
+"""
+<input name="ctl00$ctl63$txtSearchLastName" type="text" value="lochte" maxlength="36" id="ctl63_txtSearchLastName">
+<input name="ctl00$ctl63$txtSearchFirstName" type="text" value="ryan" maxlength="36" id="ctl63_txtSearchFirstName">
+<input id="ctl00_ctl63_dtStartDate_radTheDate_dateInput" name="ctl00$ctl63$dtStartDate$radTheDate$dateInput" class="riTextBox riEnabled" value="1/1/1999" type="text">
+<input id="ctl00_ctl63_dtEndDate_radTheDate_dateInput" name="ctl00$ctl63$dtEndDate$radTheDate$dateInput" class="riTextBox riEnabled" value="1/1/2016" type="text">
+
+"""
+
+r = requests.get("http://www.usaswimming.org/DesktopDefault.aspx?TabId=1470&Alias=Rainbow&Lang=en-US")
+print(r.text)
+
